@@ -1,0 +1,134 @@
+.Header {
+  background: #219ebc;
+  width: 200px;
+  height: 60px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center
+
+}
+
+.CompClickedContainer {
+  width: 200px; 
+  height: 50px; 
+  display: flex ;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.radioStation {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  align-items: center;
+}
+
+.plusAndMinusSign {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.ImageRadioApi {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor:pointer;
+}
+
+.CurrentlyPlaying {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.currentPlay {
+  color: orange;
+  font-size: 8px;
+}
+
+.StationsStyling {
+  color: white; 
+  font-size: 14px;
+}
+
+.ArrowStyling {
+  width: 16px;
+  height: 16px;
+  transform: rotate(-180deg);
+  cursor: pointer;
+}
+
+.LogoutStyling {
+  width: 16px;
+  height: 16px;
+  transform: rotate(90deg);
+  cursor: pointer;
+}
+
+
+.Footer {
+
+  background: #219ebc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  border-top: 1px solid grey;
+  width: 200px;
+  height: 60px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.MainBodyContainer {
+  height: auto;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: #a8dadc;
+}
+
+.flexCol {
+  flex-direction: column;
+}
+
+.NameAndFrequency {
+  display: flex;
+  justify-content: space-between;
+  /* padding-left: 18px; */
+  /* padding-right: 18px; */
+  color: white;
+  width: calc(100% - 36px);
+  border-bottom: 1px solid grey;
+  align-items: center;
+}
+
+.radioStyling {
+  width: inherit;
+  height: auto;
+  // border: 1px solid black;
+  //  border-bottom: 1px solid grey;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  cursor: pointer;
+}
+
+// .NameAndFrequency:last-of-type{
+//   border-bottom: 0px solid blue;
+// }
+
+// .MainBodyContainer:last-child {
+//   width: 80%;
+//   height: 30px;
+//   border-bottom: 1px solid green;
+//   // border: 1px solid black;
+//   // border-bottom: 1px solid grey;
+//   display: flex;
+//   justify-content: space-between;
+// }

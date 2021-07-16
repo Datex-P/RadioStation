@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import HeaderAndFooter from './HeaderAndFooter'
-// import Arrow from './Pics/arrow.png'
-// import Logout from './Pics/logout.png'
+import Arrow from './Pics/arrow.png'
+import Logout from './Pics/logout.png'
 import MainBody from './MainBody'
 import './App.scss';
 
@@ -12,13 +12,11 @@ function App() {
   const [radioStationClicked, setRadioStationClicked] = useState('')
   const [elClicked, setElClicked] = useState(false)
 
-  // console.log(Arrow, 'arrow form app')
-
   return (
-    <div style={{margin: ' 90px auto', width: 'fit-content'}}>
+    <div className='AppContainer'>
         <HeaderAndFooter 
-              // arrow={Arrow} 
-              // logout={Logout} 
+              arrow={Arrow} 
+              logout={Logout} 
               renderPics 
               className='Header'  
               elClicked={elClicked}  

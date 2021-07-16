@@ -1,28 +1,52 @@
+
+
+%flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center
+}
+
+%flexJustifyCenter {
+  display:flex;
+  justify-content: center;
+}
+
+%flexAlignCenter {
+  display: flex;
+  align-items: center;
+}
+
+
+
+
 .Header {
   background: #219ebc;
   width: 200px;
   height: 60px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center
 
+  @extend %flex;
+}
+
+.AppContainer {
+  margin: 90px auto; 
+  width: fit-content;
 }
 
 .CompClickedContainer {
   width: 200px; 
   height: 50px; 
-  display: flex ;
   justify-content: space-around;
-  align-items: center;
+ 
+  @extend %flexAlignCenter
 }
 
 .radioStation {
-  display: flex;
-  justify-content: space-around;
   width: 100%;
   align-items: center;
+
+  @extend %flexJustifyCenter
 }
 
 .plusAndMinusSign {
@@ -72,25 +96,25 @@
 .Footer {
 
   background: #219ebc;
-  display: flex;
   justify-content: center;
-  align-items: center;
   font-size: 14px;
   border-top: 1px solid grey;
   width: 200px;
   height: 60px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+
+  @extend %flexAlignCenter
 }
 
 .MainBodyContainer {
   height: auto;
   width: 200px;
-  display: flex;
-  justify-content: center;
   flex-direction: column;
   align-items: center;
   background: #a8dadc;
+
+  @extend %flexJustifyCenter
 }
 
 .flexCol {
@@ -98,37 +122,21 @@
 }
 
 .NameAndFrequency {
-  display: flex;
   justify-content: space-between;
-  /* padding-left: 18px; */
-  /* padding-right: 18px; */
   color: white;
   width: calc(100% - 36px);
   border-bottom: 1px solid grey;
-  align-items: center;
+
+  @extend %flexAlignCenter
 }
 
 .radioStyling {
   width: inherit;
-  height: auto;
-  // border: 1px solid black;
-  //  border-bottom: 1px solid grey;
-  display: flex;
-  justify-content: space-between;
   padding: 5px;
   cursor: pointer;
 }
 
-// .NameAndFrequency:last-of-type{
-//   border-bottom: 0px solid blue;
-// }
+.radioStyling:last-of-type .NameAndFrequency{
+  border-bottom: 0px solid black;
+}
 
-// .MainBodyContainer:last-child {
-//   width: 80%;
-//   height: 30px;
-//   border-bottom: 1px solid green;
-//   // border: 1px solid black;
-//   // border-bottom: 1px solid grey;
-//   display: flex;
-//   justify-content: space-between;
-// }

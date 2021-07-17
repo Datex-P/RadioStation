@@ -10,12 +10,27 @@ function RadioClicked({
 
   const {setElClicked, image, currentIndex, setCurrentIndex} = useContext(ThemeContext)
 
+
+
+  // function Img () {
+  //   <img
+  //       className='radio-clicked__plus-minus-img'
+  //       src={plusSign}
+  //       alt='sign inside radio field to change radio station'
+  //       onClick={(e) => {
+  //         e.stopPropagation()
+  //         setCurrentIndex(currentIndex + 1);
+  //         // console.log(currentIndex, "currIndex here");
+  //       }}
+  //     />
+  // }
+
   return (
-    <div className='CompClickedContainer'>
+    <div className='radio-clicked'>
       <img
-        className='plusAndMinusSign'
+        className='radio-clicked__plus-minus-img'
         src={minusSign}
-        alt='minusSign'
+        alt='clickable button to change radio station'
         onClick={(e) => {
           e.stopPropagation()
           setCurrentIndex(currentIndex - 1);
@@ -23,12 +38,12 @@ function RadioClicked({
           // console.log(index, "current Ind");
         }}
       />
-      <img className='ImageRadioApi' src={image} alt='imageRadio' />
+      <img className='radio-clicked__radio-img' src={image} alt='radio station that currently plays' />
 
       <img
-        className='plusAndMinusSign'
+        className='radio-clicked__plus-minus-img'
         src={plusSign}
-        alt='plusSign'
+        alt='clickable button to change radio station'
         onClick={(e) => {
           e.stopPropagation()
           setCurrentIndex(currentIndex + 1);
@@ -38,5 +53,7 @@ function RadioClicked({
     </div>
   );
 }
+
+
 
 export default RadioClicked;

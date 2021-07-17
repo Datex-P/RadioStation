@@ -15,12 +15,18 @@
   align-items: center;
 }
 
+.flexColumn {
+  flex-direction: column;
+}
+
+
+
 .HeaderAndFooter {
   background: #219ebc;
   width: 200px;
   height: 60px;
 
-  @extend %flexAlignCenter
+  @extend %flexAlignCenter, %flexJustifyAround
 }
 
 .Header {
@@ -38,19 +44,7 @@
 }
 
 
-
-
-
-
-
-
-
-.AppContainer {
-  margin: 90px auto; 
-  width: fit-content;
-}
-
-.CompClickedContainer {
+.radio-clicked {
   width: 200px; 
   height: 50px; 
  
@@ -64,64 +58,68 @@
   @extend %flexJustifyCenter
 }
 
-.plusAndMinusSign {
+.radio-clicked__plus-minus-img {
   width: 16px;
   height: 16px;
   cursor: pointer;
 }
 
-.ImageRadioApi {
+.radio-clicked__radio-img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   cursor:pointer;
 }
 
-.CurrentlyPlaying {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.station-clicked {
+
+  @extend %flexAlignCenter, .flexColumn
 }
 
-.currentPlay {
+.station-clicked__playing {
   color: orange;
   font-size: 8px;
 }
 
-.StationsStyling {
+.picsRender__stations {
   color: white; 
   font-size: 14px;
 }
 
-.ArrowStyling {
+.picsRender__arrow {
 
-  @extend .plusAndMinusSign;
+  @extend .radio-clicked__plus-minus-img;
   transform: rotate(-180deg);
   
 }
 
-.LogoutStyling {
-  @extend .plusAndMinusSign;
+.picsRender__logout {
+  @extend .radio-clicked__plus-minus-img;
   transform: rotate(90deg);
 }
 
 
 
 
-.MainBodyContainer {
+.main-body {
   height: auto;
   width: 200px;
-  flex-direction: column;
   background: #a8dadc;
 
-  @extend %flexJustifyCenter, %flexAlignCenter
+  @extend %flexJustifyCenter, %flexAlignCenter, .flexColumn
 }
 
-.flexCol {
-  flex-direction: column;
+.main-body__radio {
+  width: inherit;
+  padding: 5px;
+  cursor: pointer;
 }
 
-.NameAndFrequency {
+.main-body__radio:last-of-type .main-body__radio__field{
+  border-bottom: 0px solid black;
+}
+
+.main-body__radio__field {
   justify-content: space-between;
   color: white;
   width: calc(100% - 36px);
@@ -130,13 +128,5 @@
   @extend %flexAlignCenter
 }
 
-.radioStyling {
-  width: inherit;
-  padding: 5px;
-  cursor: pointer;
-}
 
-.radioStyling:last-of-type .NameAndFrequency{
-  border-bottom: 0px solid black;
-}
 

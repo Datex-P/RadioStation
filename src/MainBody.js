@@ -29,18 +29,19 @@ function MainBody() {
   
 
   return (
-    <div className='MainBodyContainer'>
+    <div className='main-body'>
       {api &&
         api.radios.map((el, index) => (
           <div
             key={index}
-            className='radioStyling'
+            className='main-body__radio'
             onClick={() => {
            //     clickHandler(el, index)
+
               let image = el.image;
-              let ind = image.search('Radio');
+              let indexOfRadio = image.search('Radio');
               let number = ["One", "Two", "Three", "Four"];
-              let imageNew = image.slice(0, ind + 5) + number[index];
+              let imageNew = image.slice(0, indexOfRadio + 5) + number[index];
 
               setElClicked(true);
               setCurrentIndex(index);
@@ -50,16 +51,16 @@ function MainBody() {
             }}
           >
             <div
-              className={elClicked ? 'radioStation flexCol' : 'radioStation'}
+              className={`${elClicked ? 'flexColumn' : ''} main-body__radio`}
             >
               <div style={{position: 'relative'}}>
-                {elClicked && index === currentIndex ? (
+                {elClicked && index === currentIndex ? 
                   <RadioClicked index={index} />
-                ) : (
+                 : 
                   ''
-                )}
+                }
               </div>
-              <div className='NameAndFrequency'>
+              <div className='main-body__radio__field'>
                 <div>{el.name}</div> <div>{el.frequency}</div>
               </div>
             </div>

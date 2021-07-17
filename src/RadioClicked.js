@@ -12,22 +12,24 @@ function RadioClicked({
 
 
 
-  // function Img () {
-  //   <img
-  //       className='radio-clicked__plus-minus-img'
-  //       src={plusSign}
-  //       alt='sign inside radio field to change radio station'
-  //       onClick={(e) => {
-  //         e.stopPropagation()
-  //         setCurrentIndex(currentIndex + 1);
-  //         // console.log(currentIndex, "currIndex here");
-  //       }}
-  //     />
-  // }
+  function Img () {
+   return  (<img
+        className='radio-clicked__plus-minus-img'
+        src={plusSign}
+        alt='sign inside radio field to change radio station'
+        onClick={(e) => {
+          e.stopPropagation()
+          setCurrentIndex(currentIndex + 1);
+          // console.log(currentIndex, "currIndex here");
+        }}
+      />)
+      
+  }
 
   return (
     <div className='radio-clicked'>
-      <img
+      <Img/>
+      {/* <img
         className='radio-clicked__plus-minus-img'
         src={minusSign}
         alt='clickable button to change radio station'
@@ -37,7 +39,7 @@ function RadioClicked({
           setElClicked(false);
           // console.log(index, "current Ind");
         }}
-      />
+      /> */}
       <img className='radio-clicked__radio-img' src={image} alt='radio station that currently plays' />
 
       <img

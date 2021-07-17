@@ -6,9 +6,6 @@ import MainBody from "./MainBody";
 import "./App.scss";
 import ThemeProvider from "./ThemeContext";
 
-
-
-
 function App() {
   return (
     <div style={{ margin: "90px auto", width: "fit-content" }}>
@@ -17,12 +14,12 @@ function App() {
           arrow={Arrow}
           logout={Logout}
           renderPics
-          className="HeaderAndFooter Header"
+          className='HeaderAndFooter Header'
         />
 
         <MainBody />
 
-        <HeaderAndFooter className="HeaderAndFooter Footer" />
+        <HeaderAndFooter className='HeaderAndFooter Footer' />
       </ThemeProvider>
     </div>
   );

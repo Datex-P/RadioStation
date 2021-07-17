@@ -1,20 +1,18 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from "react";
 
 export const ThemeContext = React.createContext();
 
 function ThemeProvider({ children }) {
-  const [radioClicked, setRadioClicked] = useState('');
-  const [radioStationClicked, setRadioStationClicked] = useState('');
+  const [radioClicked, setRadioClicked] = useState("");
+  const [radioStationClicked, setRadioStationClicked] = useState("");
   const [elClicked, setElClicked] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(null);
-  const [image, setImage] = useState('');
+  const [image, setImage] = useState("");
 
-
-  const [api, setApi] = useState('');
- 
+  const [api, setApi] = useState("");
 
   useEffect(() => {
-    fetch('https://teclead.de/recruiting/radios')
+    fetch("https://teclead.de/recruiting/radios")
       .then((obj) => obj.json())
       .then((data) => {
         setApi(data);
@@ -34,8 +32,8 @@ function ThemeProvider({ children }) {
         setCurrentIndex,
         image,
         setImage,
-        api,
-        setApi
+        api,  //api was
+        setApi //api was successfully triggered
       }}
     >
       {children}
@@ -43,4 +41,4 @@ function ThemeProvider({ children }) {
   );
 }
 
-export default ThemeProvider
+export default ThemeProvider;

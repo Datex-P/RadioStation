@@ -1,5 +1,4 @@
 
-
 %flexJustifyAround {
   display: flex;
   justify-content: space-around;
@@ -15,6 +14,18 @@
   align-items: center;
 }
 
+%flexJustifyCenterCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%flexJustifyAroundCenter {
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .flexColumn {
   flex-direction: column;
 }
@@ -26,7 +37,8 @@
   width: 200px;
   height: 60px;
 
-  @extend %flexAlignCenter, %flexJustifyAround
+  // @extend %flexAlignCenter, %flexJustifyAround
+  @extend %flexJustifyAroundCenter
 }
 
 .Header {
@@ -48,7 +60,8 @@
   width: 200px; 
   height: 50px; 
  
-  @extend %flexAlignCenter, %flexJustifyAround
+  // @extend %flexAlignCenter, %flexJustifyAround
+  @extend %flexJustifyAroundCenter
 }
 
 .radioStation {
@@ -58,21 +71,23 @@
   @extend %flexJustifyCenter
 }
 
+
+
 .radio-clicked__plus-minus-img {
+  cursor: pointer;
   width: 16px;
   height: 16px;
-  cursor: pointer;
+
 }
 
 .radio-clicked__radio-img {
-  width: 40px;
-  height: 40px;
   border-radius: 50%;
   cursor:pointer;
+  width: 40px;
+  height: 40px;
 }
 
 .station-clicked {
-
   @extend %flexAlignCenter, .flexColumn
 }
 
@@ -87,35 +102,31 @@
 }
 
 .picsRender__arrow {
-
-  @extend .radio-clicked__plus-minus-img;
   transform: rotate(-180deg);
+  @extend .radio-clicked__plus-minus-img;
   
 }
 
 .picsRender__logout {
-  @extend .radio-clicked__plus-minus-img;
   transform: rotate(90deg);
+  @extend .radio-clicked__plus-minus-img;
 }
-
-
-
 
 .main-body {
   height: auto;
   width: 200px;
   background: #a8dadc;
 
-  @extend %flexJustifyCenter, %flexAlignCenter, .flexColumn
+  @extend %flexJustifyCenterCenter, .flexColumn
 }
 
 .main-body__radio {
+  cursor: pointer;
   width: inherit;
   padding: 5px;
-  cursor: pointer;
 }
 
-.main-body__radio:last-of-type .main-body__radio__field{
+.main-body__radio:last-of-type .main-body__radio__field {
   border-bottom: 0px solid black;
 }
 

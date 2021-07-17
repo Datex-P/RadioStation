@@ -1,6 +1,7 @@
-import React, { useContext } from 'react';
-import RadioClicked from './RadioClicked';
-import { ThemeContext } from './ThemeContext';
+import React, { useContext } from "react";
+import RadioClicked from "./RadioClicked";
+import { ThemeContext } from "./ThemeContext";
+
 
 function MainBody() {
   const {
@@ -11,22 +12,21 @@ function MainBody() {
     setImage,
     currentIndex,
     setCurrentIndex,
-    api,
+    api
   } = useContext(ThemeContext);
 
-  // function clickHandler (el, index) {
-  //   let image = el.image;
-  //   let ind = image.search('Radio');
-  //   let number = ["One", "Two", "Three", "Four"];
-  //   let imageNew = image.slice(0, ind + 5) + number[index];
-  
-  //   setElClicked(true);
-  //   setCurrentIndex(index);
-  //   setImage(imageNew);
-  //   setRadioClicked(el.name);
-  //   setRadioStationClicked(true);
-  // }
-  
+  function clickHandler(el, index) {
+    let image = el.image;
+    let ind = image.search("Radio");
+    let number = ["One", "Two", "Three", "Four"];
+    let imageNew = image.slice(0, ind + 5) + number[index];
+
+    setElClicked(true);
+    setCurrentIndex(index);
+    setImage(imageNew);
+    setRadioClicked(el.name);
+    setRadioStationClicked(true);
+  }
 
   return (
     <div className='main-body'>
@@ -36,29 +36,18 @@ function MainBody() {
             key={index}
             className='main-body__radio'
             onClick={() => {
-           //     clickHandler(el, index)
-
-              let image = el.image;
-              let indexOfRadio = image.search('Radio');
-              let number = ["One", "Two", "Three", "Four"];
-              let imageNew = image.slice(0, indexOfRadio + 5) + number[index];
-
-              setElClicked(true);
-              setCurrentIndex(index);
-              setImage(imageNew);
-              setRadioClicked(el.name);
-              setRadioStationClicked(true);
+              clickHandler(el, index)
             }}
           >
             <div
-              className={`${elClicked ? 'flexColumn' : ''} main-body__radio`}
+              className={`${elClicked ? "flexColumn" : ""} main-body__radio`}
             >
-              <div style={{position: 'relative'}}>
-                {elClicked && index === currentIndex ? 
+              <div style={{ position: "relative" }}>
+                {elClicked && index === currentIndex ? (
                   <RadioClicked index={index} />
-                 : 
-                  ''
-                }
+                ) : (
+                  ""
+                )}
               </div>
               <div className='main-body__radio__field'>
                 <div>{el.name}</div> <div>{el.frequency}</div>
@@ -69,10 +58,5 @@ function MainBody() {
     </div>
   );
 }
-
-
-
-
-
 
 export default MainBody;

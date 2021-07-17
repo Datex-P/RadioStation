@@ -1,14 +1,14 @@
+import {useContext } from 'react';
 import minusSign from './Pics/minusSign.png';
 import plusSign from './Pics/plusSign.png';
+import { ThemeContext } from './ThemeContext';
 
 function RadioClicked({
-  image,
-  index,
-  setCurrentIndex,
-  setElClicked,
-  currentIndex,
+  index
 }) {
-  console.log(currentIndex, "currentIndexIn compClicked");
+ 
+
+  const {setElClicked, image, currentIndex, setCurrentIndex} = useContext(ThemeContext)
 
   return (
     <div className='CompClickedContainer'>
@@ -20,7 +20,7 @@ function RadioClicked({
           e.stopPropagation()
           setCurrentIndex(currentIndex - 1);
           setElClicked(false);
-          console.log(index, "current Ind");
+          // console.log(index, "current Ind");
         }}
       />
       <img className='ImageRadioApi' src={image} alt='imageRadio' />

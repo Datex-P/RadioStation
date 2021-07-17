@@ -1,13 +1,16 @@
-import React from "react";
+import React, {useContext} from 'react';
+import { ThemeContext } from './ThemeContext';
 
 function HeaderAndFooter({
   arrow, logout,
   className,
   renderPics,
-  radioClicked,
-  radioStationClicked,
-  setElClicked,
 }) {
+
+
+const {radioClicked, radioStationClicked, setElClicked} = useContext(ThemeContext)
+
+
   return (
     <div className={`${className}`}>
       {renderPics ? (

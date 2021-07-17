@@ -1,42 +1,32 @@
-import React, {useState} from 'react'
+import React from 'react'
 import HeaderAndFooter from './HeaderAndFooter'
 import Arrow from './Pics/arrow.png'
 import Logout from './Pics/logout.png'
 import MainBody from './MainBody'
 import './App.scss';
+import  ThemeProvider  from './ThemeContext'
 
 
 function App() {
- 
-  const [radioClicked, setRadioClicked] = useState('')
-  const [radioStationClicked, setRadioStationClicked] = useState('')
-  const [elClicked, setElClicked] = useState(false)
 
   return (
     <div className='AppContainer'>
+
+      <ThemeProvider>
         <HeaderAndFooter 
               arrow={Arrow} 
               logout={Logout} 
               renderPics 
-              className='Header'  
-              elClicked={elClicked}  
-              setElClicked={setElClicked}
-          />
+              className='HeaderAndFooter Header'  
+            />
           
         <MainBody 
-            setRadioClicked={setRadioClicked} 
-            radioStationClicked={radioStationClicked} 
-            radioClicked={radioClicked} 
-            setRadioStationClicked={setRadioStationClicked}
-            elClicked={elClicked}  
-            setElClicked={setElClicked}
         />
 
         <HeaderAndFooter 
-            className='Footer' 
-            radioClicked={radioClicked} 
-            radioStationClicked={radioStationClicked} 
+            className='HeaderAndFooter Footer' 
         />
+      </ThemeProvider>
     </div>
   );
 }

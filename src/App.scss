@@ -1,9 +1,8 @@
 
 
-%flex {
+%flexJustifyAround {
   display: flex;
   justify-content: space-around;
-  align-items: center
 }
 
 %flexJustifyCenter {
@@ -16,18 +15,35 @@
   align-items: center;
 }
 
-
-
-
-.Header {
+.HeaderAndFooter {
   background: #219ebc;
   width: 200px;
   height: 60px;
+
+  @extend %flexAlignCenter
+}
+
+.Header {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-
-  @extend %flex;
 }
+
+.Footer {
+  font-size: 14px;
+  border-top: 1px solid grey;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+
+  @extend %flexJustifyCenter
+}
+
+
+
+
+
+
+
+
 
 .AppContainer {
   margin: 90px auto; 
@@ -37,9 +53,8 @@
 .CompClickedContainer {
   width: 200px; 
   height: 50px; 
-  justify-content: space-around;
  
-  @extend %flexAlignCenter
+  @extend %flexAlignCenter, %flexJustifyAround
 }
 
 .radioStation {
@@ -79,42 +94,27 @@
 }
 
 .ArrowStyling {
-  width: 16px;
-  height: 16px;
+
+  @extend .plusAndMinusSign;
   transform: rotate(-180deg);
-  cursor: pointer;
+  
 }
 
 .LogoutStyling {
-  width: 16px;
-  height: 16px;
+  @extend .plusAndMinusSign;
   transform: rotate(90deg);
-  cursor: pointer;
 }
 
 
-.Footer {
 
-  background: #219ebc;
-  justify-content: center;
-  font-size: 14px;
-  border-top: 1px solid grey;
-  width: 200px;
-  height: 60px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-
-  @extend %flexAlignCenter
-}
 
 .MainBodyContainer {
   height: auto;
   width: 200px;
   flex-direction: column;
-  align-items: center;
   background: #a8dadc;
 
-  @extend %flexJustifyCenter
+  @extend %flexJustifyCenter, %flexAlignCenter
 }
 
 .flexCol {

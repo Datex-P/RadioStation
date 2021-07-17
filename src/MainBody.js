@@ -1,23 +1,32 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 import RadioClicked from './RadioClicked';
+import { ThemeContext } from './ThemeContext';
 
-function MainBody({
-  setRadioClicked,
-  setRadioStationClicked,
-  elClicked,
-  setElClicked,
-}) {
-  const [api, setApi] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(null);
-  const [image, setImage] = useState('');
+function MainBody() {
+  const {
+    setRadioClicked,
+    elClicked,
+    setRadioStationClicked,
+    setElClicked,
+    setImage,
+    currentIndex,
+    setCurrentIndex,
+    api,
+  } = useContext(ThemeContext);
 
-  useEffect(() => {
-    fetch('https://teclead.de/recruiting/radios')
-      .then((obj) => obj.json())
-      .then((data) => {
-        setApi(data);
-      });
-  }, [setApi]);
+  // function clickHandler (el, index) {
+  //   let image = el.image;
+  //   let ind = image.search('Radio');
+  //   let number = ["One", "Two", "Three", "Four"];
+  //   let imageNew = image.slice(0, ind + 5) + number[index];
+  
+  //   setElClicked(true);
+  //   setCurrentIndex(index);
+  //   setImage(imageNew);
+  //   setRadioClicked(el.name);
+  //   setRadioStationClicked(true);
+  // }
+  
 
   return (
     <div className='MainBodyContainer'>
@@ -27,6 +36,7 @@ function MainBody({
             key={index}
             className='radioStyling'
             onClick={() => {
+           //     clickHandler(el, index)
               let image = el.image;
               let ind = image.search('Radio');
               let number = ["One", "Two", "Three", "Four"];
@@ -42,15 +52,9 @@ function MainBody({
             <div
               className={elClicked ? 'radioStation flexCol' : 'radioStation'}
             >
-              <div style={{ position: 'relative' }}>
+              <div style={{position: 'relative'}}>
                 {elClicked && index === currentIndex ? (
-                  <RadioClicked
-                    image={image}
-                    index={index}
-                    currentIndex={currentIndex}
-                    setCurrentIndex={setCurrentIndex}
-                    setElClicked={setElClicked}
-                  />
+                  <RadioClicked index={index} />
                 ) : (
                   ''
                 )}
@@ -64,5 +68,10 @@ function MainBody({
     </div>
   );
 }
+
+
+
+
+
 
 export default MainBody;
